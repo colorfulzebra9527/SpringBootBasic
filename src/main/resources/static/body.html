@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>@RequestBody 演示</title>
+</head>
+<body>
+<h2>@RequestBody 接收 JSON 请求体</h2>
+<form id="jsonForm">
+    ID：<input type="text" id="id" value="1"/><br/><br/>
+    姓名：<input type="text" id="name" value="zxx"/><br/><br/>
+    性别：<input type="text" id="gender" value="male"/><br/><br/>
+    年龄：<input type="text" id="age" value="19"/><br/><br/>
+    <button type="button" onclick="submitJson()">提交（JSON）</button>
+</form>
+<p id="result"></p>
+<script>
+    function submitJson() {
+        var data = {
+            id: document.getElementById('id').value,
+            name: document.getElementById('name').value,
+            gender: document.getElementById('gender').value,
+            age: parseInt(document.getElementById('age').value)
+        };
+        fetch('/rb/demo', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(data)
+        })
+        .then(function(response) { return response.text(); })
+        .then(function(text) { document.getElementById('result').innerText = text; });
+    }
+</script>
+</body>
+</html>

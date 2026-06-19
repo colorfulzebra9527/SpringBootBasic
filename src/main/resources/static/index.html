@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Boot 普通传参演示</title>
+</head>
+<body>
+<h2>Spring Boot 普通传参演示</h2>
+<ul>
+    <li><a href="/qp/demo?id=1&name=zxx">无注解接参（Query String 自动匹配）</a></li>
+    <li><a href="/rp/demo?id=1&name=zxx">@RequestParam 基本用法</a></li>
+    <li><a href="/rp/dv">@RequestParam 默认值与非必填</a></li>
+    <li><a href="/ob/demo?id=1&name=zxx&gender=male&age=19">对象自动绑定（Query String → POJO）</a></li>
+    <li><a href="/body.html">@RequestBody 接收 JSON 请求体</a></li>
+    <li><a href="/rh/demo">@RequestHeader 获取请求头</a></li>
+    <li><a href="/cv/demo">@CookieValue 获取 Cookie</a></li>
+</ul>
+</body>
+</html>
