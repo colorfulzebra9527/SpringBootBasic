@@ -2,6 +2,6 @@ package com.cn.springbootbasic.entity;
 
 public class Person {
     public void test1(){
-        System.out.println("test 6666");
+        System.out.println("test");
     }
 }
